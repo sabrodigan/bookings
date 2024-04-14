@@ -10,9 +10,9 @@ This app makes use of:
 
 
 
-- Uses [alex edwards scs](github.com/alexedwards/scs/V2)
-- Uses [nosurf](github.com/justinas/nosurf)
-- Uses [chi router](github.com/go-chi/chi)
+- Uses [alex edwards scs](https://github.com/alexedwards/scs/V2)
+- Uses [nosurf](https://github.com/justinas/nosurf)
+- Uses [chi router](htps://github.com/go-chi/chi)
 
 This app is very much a WIP and I will be improving over the next period.  Leadaing to the boxes-app which I hope to launch via social media
 
