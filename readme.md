@@ -10,7 +10,7 @@ This app makes use of:
 
 
 
-- Uses [alex edwards scs](https://github.com/alexedwards/scs/V2)
+- Uses [alex edwards scs](https://github.com/alexedwards/scs)
 - Uses [nosurf](https://github.com/justinas/nosurf)
 - Uses [chi router](htps://github.com/go-chi/chi)
 
