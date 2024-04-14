@@ -1,10 +1,10 @@
 package handlers
 
 import (
+	"github.com/sabrodigan/bookings/models"
+	"github.com/sabrodigan/bookings/pkg/config"
+	"github.com/sabrodigan/bookings/pkg/render"
 	"net/http"
-	"website/models"
-	"website/pkg/config"
-	"website/pkg/render"
 )
 
 // Repo the repository used by the handlers
@@ -31,13 +31,19 @@ func NewHandlers(r *Repository) {
 func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	remoteIP := r.RemoteAddr
 	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
-	render.TempRendered(w, "home.page.tmpl", &models.TemplateData{})
+	//render.TempRendered(w, "home.page.tmpl", &models.TemplateData{})
+	//// send data to the template
+	stringMap := make(map[string]string)
+	render.TempRendered(w, "home.page.tmpl", &models.TemplateData{
+		StringMap: stringMap,
+		Flash:     "This is a flash message",
+	})
 
 } // About is the handler for the about page
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	// perform some logic
 	stringMap := make(map[string]string)
-	stringMap["test"] = "Hello, again, this is dynamic content, which is sent to the template using the EXECUTE command and including the data in the TemplateData struct.  Once the template has the data, we can show a search page that allows for freetex search of the boxes database."
+	stringMap["flash"] = "This is dynamic data for the home page"
 
 	remoteIP := m.App.Session.GetString(r.Context(), "remote_ip")
 	stringMap["remote_ip"] = remoteIP

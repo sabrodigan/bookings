@@ -3,12 +3,12 @@ package render
 import (
 	"bytes"
 	"fmt"
+	"github.com/sabrodigan/bookings/models"
+	"github.com/sabrodigan/bookings/pkg/config"
 	"html/template"
 	"log"
 	"net/http"
 	"path/filepath"
-	"website/models"
-	"website/pkg/config"
 )
 
 var functions = template.FuncMap{}
