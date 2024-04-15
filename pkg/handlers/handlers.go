@@ -34,7 +34,7 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	//render.TempRendered(w, "home.page.tmpl", &models.TemplateData{})
 	//// send data to the template
 	stringMap := make(map[string]string)
-	render.TempRendered(w, "home.page.html", &models.TemplateData{
+	render.TempRendered(w, "home.page.tmpl", &models.TemplateData{
 		StringMap: stringMap,
 		Flash:     "This is a flash message",
 	})
@@ -49,7 +49,7 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	stringMap["remote_ip"] = remoteIP
 
 	// send data to the template
-	render.TempRendered(w, "about.page.html", &models.TemplateData{
+	render.TempRendered(w, "about.page.tmpl", &models.TemplateData{
 		StringMap: stringMap,
 		Flash:     "This is a flash message",
 	})
