@@ -23,15 +23,15 @@ func AddData(w http.ResponseWriter, tmpl string, td *models.TemplateData) *model
 	return td
 }
 
-// TempRendered renders a template
-func TempRendered(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
+// PageRender renders a template
+func PageRender(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
 	// get the template cache from the app config or from disk based on UseCache bool
 	var tc map[string]*template.Template
 	if app.UseCache {
 		tc = app.TemplateCache
 		fmt.Println("Template was pulled from the cache")
 	} else {
-		tc, _ = CreateTemplateCache()
+		tc, _ = CreateCache()
 		fmt.Println("Template was pulled from the disk")
 	}
 
@@ -50,8 +50,8 @@ func TempRendered(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
 	}
 }
 
-// CreateTemplateCache creates a template cache as a map
-func CreateTemplateCache() (map[string]*template.Template, error) {
+// CreateCache creates a template cache as a map
+func CreateCache() (map[string]*template.Template, error) {
 
 	myCache := map[string]*template.Template{}
 

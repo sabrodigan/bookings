@@ -31,15 +31,15 @@ func NewHandlers(r *Repository) {
 func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	remoteIP := r.RemoteAddr
 	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
-	//render.TempRendered(w, "home.page.tmpl", &models.TemplateData{})
-	//// send data to the template
 	stringMap := make(map[string]string)
-	render.TempRendered(w, "home.page.html", &models.TemplateData{
+	render.PageRender(w, "home.page.html", &models.TemplateData{
 		StringMap: stringMap,
 		Flash:     "This is a flash message",
 	})
 
-} // About is the handler for the about page
+}
+
+// About is the handler for the about page
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	// perform some logic
 	stringMap := make(map[string]string)
@@ -49,7 +49,7 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	stringMap["remote_ip"] = remoteIP
 
 	// send data to the template
-	render.TempRendered(w, "about.page.html", &models.TemplateData{
+	render.PageRender(w, "about.page.html", &models.TemplateData{
 		StringMap: stringMap,
 		Flash:     "This is a flash message",
 	})
