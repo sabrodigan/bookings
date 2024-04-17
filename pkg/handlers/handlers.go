@@ -37,6 +37,16 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 
 }
 
+// Home is the handler for the home page
+func (m *Repository) Divide(w http.ResponseWriter, r *http.Request) {
+
+	stringMap := make(map[string]string)
+	render.PageRender(w, "divide.page.html", &models.TemplateData{
+		StringMap: stringMap,
+	})
+
+}
+
 // About is the handler for the about page
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	// perform some logic
