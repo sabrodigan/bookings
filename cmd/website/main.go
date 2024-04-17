@@ -20,19 +20,19 @@ var session *scs.SessionManager
 func main() {
 
 	// change this to true when in production
-	app.InProduction = false
+	app.InProduction = true
 
 	// open the session for 24 hours
 	session = scs.New()
 	session.Lifetime = 24 * time.Hour
-	session.Cookie.Persist = true
+	session.Cookie.Persist = false
 	session.Cookie.Secure = app.InProduction
 
 	app.Session = session
 
 	tc, err := render.CreateCache()
 	if err != nil {
-		log.Fatal("cannot create template cache")
+		log.Fatal("cannot create template cache (main)")
 	}
 
 	app.TemplateCache = tc
