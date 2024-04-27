@@ -57,6 +57,7 @@
 <h1>Welcome to the SEARCH page</h1>
 
 <div class="container">
+
     <p></p>
     <p></p>
     <p>
@@ -65,7 +66,8 @@
         available in this private instance.
     </p>
 
-<form action="boot.page.html" method="get" novalidate class="needs-validation">
+
+<form action="boot.page.html" method="get">
     <div class="form-row">
         <div class="row">
         <div class="col-md-1"></div>
@@ -81,7 +83,7 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary mb-6">Search database</button>
+        <button type="submit" class="btn btn-primary mb-3">Search database</button>
 </form>
 
 
@@ -98,33 +100,11 @@
     </div>
 </div>
     <p>For the moment, click this link for the source <a href=https://github.com/sabrodigan/bookings>code</a></p>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
-<!--    this is my Javascript for functionality on this search page-->
-<script>
-    console.log('This is the search page');
 
-    (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            let forms = document.getElementsByClassName('needs-validation');
 
-            // Loop over them and prevent submission
-            Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-                form.classList.add('was-validated')
-            }, false);
-            });
-        }, false);
-    })();
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
-</script>
-
-</div>>
-</body>
+        </div>>
+    </body>
 </html>
