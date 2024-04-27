@@ -3,12 +3,12 @@ package main
 import (
 	"fmt"
 	"github.com/alexedwards/scs/v2"
+	"github.com/sabrodigan/bookings/pkg/config"
+	"github.com/sabrodigan/bookings/pkg/handlers"
+	"github.com/sabrodigan/bookings/pkg/render"
 	"log"
 	"net/http"
 	"time"
-	"website/pkg/config"
-	"website/pkg/handlers"
-	"website/pkg/render"
 )
 
 const portNumber = ":8080"
@@ -20,19 +20,19 @@ var session *scs.SessionManager
 func main() {
 
 	// change this to true when in production
-	app.InProduction = false
+	app.InProduction = true
 
 	// open the session for 24 hours
 	session = scs.New()
 	session.Lifetime = 24 * time.Hour
-	session.Cookie.Persist = true
+	session.Cookie.Persist = false
 	session.Cookie.Secure = app.InProduction
 
 	app.Session = session
 
-	tc, err := render.CreateTemplateCache()
+	tc, err := render.CreateCache()
 	if err != nil {
-		log.Fatal("cannot create template cache")
+		log.Fatal("cannot create template cache (main)")
 	}
 
 	app.TemplateCache = tc

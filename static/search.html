@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>.myfooter {
+        background-color: #1a1802;
+        color: #e3d9d9;
+        margin-top: 3em;
+        height: 5em;
+        padding: 1em;
+        font-size: 80%;
+    }
+    </style>
+
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Use the App
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Boxes-App</a></li>
+                        <li><a class="dropdown-item" href="#">About</a></li>
+                        <li><a class="dropdown-item" href="#">Goodbye</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>Welcome to the SEARCH page</h1>
+
+<div class="container">
+    <p></p>
+    <p></p>
+    <p>
+        This page will allow you to create boxes, search for the contents, <strong>delete</strong> boxes and move items around.  It is a private
+        instance of the App, which will be <em>enabled for public access once it has been perfected</em>.  There are a number of features
+        available in this private instance.
+    </p>
+
+<form action="boot.page.html" method="get" novalidate class="needs-validation">
+    <div class="form-row">
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-6"></div>
+
+        <div class="col">
+            <label for="searchDB" class="form-label">Search the boxes</label>
+            <input type="text" class="form-control" id="searchDB" name="searchDB" aria-describedby="searchHelp">
+            <label for="date" class="form-label">check the date</label>
+            <input type="date" class="form-control" id="date" name="date" aria-describedby="dateHelp"><div id="dateHelp" class="form-text">Search the database</div>
+        </div>
+
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-6">Search database</button>
+</form>
+
+
+<div class="row myfooter">
+
+    <div class="col">
+        Left
+    </div>
+    <div class="col">
+        Middle
+    </div>
+    <div class="col">
+        Right
+    </div>
+</div>
+    <p>For the moment, click this link for the source <a href=https://github.com/sabrodigan/bookings>code</a></p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+<!--    this is my Javascript for functionality on this search page-->
+<script>
+    console.log('This is the search page');
+
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            let forms = document.getElementsByClassName('needs-validation');
+
+            // Loop over them and prevent submission
+            Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                form.classList.add('was-validated')
+            }, false);
+            });
+        }, false);
+    })();
+
+</script>
+
+</div>>
+</body>
+</html>
