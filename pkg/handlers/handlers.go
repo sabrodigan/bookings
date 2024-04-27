@@ -37,7 +37,17 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// Home is the handler for the home page
+// Index is the handler for the default  page
+func (m *Repository) Index(w http.ResponseWriter, r *http.Request) {
+
+	stringMap := make(map[string]string)
+	render.PageRender(w, "index.page.html", &models.TemplateData{
+		StringMap: stringMap,
+	})
+
+}
+
+// Divide is the handler for the divide page
 func (m *Repository) Divide(w http.ResponseWriter, r *http.Request) {
 
 	stringMap := make(map[string]string)
@@ -56,7 +66,6 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	// send data to the template
 	render.PageRender(w, "about.page.html", &models.TemplateData{
 		StringMap: stringMap,
-		Flash:     "This is a flash message",
 	})
 
 }
