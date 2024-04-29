@@ -15,3 +15,5 @@ This app is very much a WIP and will help me locate any wire, plug, powersupply,
 
 
 Now adding more content to README.MD to see if git pull works. This works in VIM, Neovim, Goland, Webstorm and VS Code.
+
+I am working with git and Github to be ready for larger projects.
