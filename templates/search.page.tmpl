@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker-bs5.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+    <style>
+        .btn-outline-secondary {
+            color: aqua;
+            border-color: #6c757d;
+        }
+
+        p {
+
+        }
+        .paraClass {
+            font-size: 3em;
+        }
+        .secondClass {
+            color: red;
+        }
+        #lastPara {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Use the App
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Boxes-App</a></li>
+                            <li><a class="dropdown-item" href="#">About</a></li>
+                            <li><a class="dropdown-item" href="#">Goodbye</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h1>Welcome to the SEARCH page of the Boxes App</h1>
+
+    <div class="container">
+        <p></p>
+        <p></p>
+        <p>
+            This page will allow you to create boxes, search for the contents, <strong>delete</strong> boxes and move items around.  It is a private
+            instance of the App, </p>
+        <p> which will be <em>enabled for public access once it has been perfected</em>.  There are a number of features
+            available in this private instance.</p>
+        <p id="lastPara">This is underlined text.</p>
+        <p class="paraClass secondClass">This is a paragraph with para/second class</p>
+
+    <!--Page to go to replace the # in the line below-->
+        <form action="#" method="get" novalidate class="needs-validation">
+            <div class="form-row">
+                <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-6"></div>
+
+                <div class="col">
+                    <label for="searchDB" class="form-label">Search the boxes</label>
+                    <input required type="text" class="form-control" id="searchDB" name="searchDB" aria-describedby="searchHelp">
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+            </div>
+
+            <div id="foo" data-date="01/25/2020">
+                <div class=id="foo">
+                    <label>
+                        <input required class="form-control" type="text" name="foo" placeholder="Enter here">
+                    </label>
+                </div>
+            </div>
+
+            <br>
+            <hr>
+                <button type="submit" class="btn btn-primary mb-6">Search database</button>
+            <div class="row">
+                <div class="col">
+                    <p id="myParagraph">This is some text.</p>
+                    <p>
+                        <button id="colorButton" class="btn btn-outline-secondary">Click me</button>
+                        <button id="secondButton" class="btn btn-outline-secondary">Click me as well</button>
+                    </p>
+                </div>
+            </div>
+        </form>
+
+    <div class="my-footer">
+        <div class="row">
+        <div class="col">
+            Left
+        </div>
+        <div class="col">
+            Middle
+        </div>
+        <div class="col">
+            Right
+        </div>
+    </div>
+        <br>
+        <br>
+        <p>For the moment, click this link for the source <a href=https://github.com/sabrodigan/bookings>code</a></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+    <script src="https://unpkg.com/notie"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--    this is my Javascript for functionality on this search page-->
+    <script>
+        console.log('This is the search page');
+        let attention = Prompt();
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                let forms = document.getElementsByClassName('needs-validation');
+
+                // Loop over them and prevent submission
+                Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                    form.classList.add('was-validated')
+                }, false);
+                });
+            }, false);
+        })();
+
+        const elem = document.querySelector('input[name="foo"]');
+        const datepicker = new Datepicker(elem, {
+            format: "dd/mm/yyyy",
+        });
+
+        document.getElementById("colorButton").addEventListener("click", function () {
+            // Get the paragraph element
+            let paragraph = document.getElementById('myParagraph');
+            // Toggle the 'redText' class
+            paragraph.classList.toggle('redText');
+
+            // Send a notie to the top
+            notify("This is the Success Banner", "success");
+
+            // place a toast in the corner
+            // attention.toast({msg: "Hello World, the best!", icon: "success", position: "top-end"})
+            attention.success({msg: "Hello success my old friend", position: "center", footer: "Well done!"})
+        });
+
+        document.getElementById("secondButton").addEventListener("click", function () {
+            // Get the paragraph element
+            let paragraph = document.getElementById('myParagraph');
+            // Toggle the 'redText' class
+            paragraph.classList.toggle('redText');
+
+            // Send a notie to the top
+            notify("This is the Success Banner", "success");
+            // send a modal alert from sweetalert2
+            // modalAlert("Error", "This is the Error Banner", "warning", "Shit");
+            // place a toast in the corner
+            attention.toast({msg: "Hello World, the best!", icon: "success", position: "top-end"})
+            // attention.success({msg: "Hello success my old friend", position: "center", footer: "Well done!"})
+        });
+
+        document.querySelector('button[type="submit"]').addEventListener('click', function (event) {
+            // Prevent the form from submitting
+            event.preventDefault();
+            // Display the banner
+            notify("Search button has been clicked", "success");
+            modalAlert("Search", "You are about to search", "success", "OK");
+        });
+
+
+        function notify(message, type) {
+            notie.alert({
+                type: type,
+                text: message,
+                time: 3
+            });
+        }
+        function modalAlert(title, message, type, confbtn) {
+            Swal.fire({
+                title: title,
+                html: message,
+                icon: type,
+                confirmButtonText: confbtn,
+            });
+        }
+        function Prompt() {
+
+            let toast = function(c) {
+                const {
+                    msg = "",
+                    icon = "success",
+                    position = "top-start",
+                } = c;
+                const Toast = Swal.mixin({
+                    toast: true,
+                    title: msg,
+                    position: position,
+                    icon: icon,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: icon,
+                    title: msg,
+                });
+                console.log("Clicked button and got toast")
+            }
+            let success = function(c) {
+                const {
+                    msg = "",
+                    icon = "success",
+                    position = "bottom-start",
+                    footer = footer,
+                } = c;
+
+                Swal.fire({
+                    icon: 'success',
+                    title: msg,
+                    showConfirmButton: false,
+                    timer: 1500,
+                    timerProgressBar: true,
+                    position: position,
+                    footer: footer,
+                });
+
+
+                console.log("Clicked button and got success")
+            }
+            return {
+                toast: toast, success,
+            }
+        }
+
+
+        </script>
+    </div>
+</body>
+</html>

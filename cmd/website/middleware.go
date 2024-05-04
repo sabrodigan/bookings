@@ -15,6 +15,7 @@ func WriteToConsole(next http.Handler) http.Handler {
 }
 func NoSurf(next http.Handler) http.Handler {
 	crsfHandler := nosurf.New(next)
+
 	crsfHandler.SetBaseCookie(http.Cookie{
 		HttpOnly: true,
 		Path:     "/",
